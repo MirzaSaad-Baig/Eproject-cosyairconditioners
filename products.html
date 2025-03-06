@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="icon" type="png/image" href="images/pngwing.com.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <style>
+.nav-link, .dropdown-menu{
+    font-size: larger !important;
+    font-family: sans-serif ; font-size: larger ;
+  }
+nav{
+  position:relative !important;
+}
+
+                  /* Card Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px auto;
+}
+ 
+ 
+                    /* Card Styles */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+
+.card p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+}
+/* Price Section */
+.price {
+    margin-bottom: 15px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1.25rem;
+    margin-right: 10px;
+}
+
+.discounted-price {
+    color: #007bff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+          /***     footer      **/
+          footer {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff; 
+  color: #333;
+}
+
+footer {
+  background-color: #0077b6; 
+  color: #ffffff;
+  padding: 40px 0 20px 0;
+  margin-top: 50px;
+  width: 1580px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #f0f8ff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #f0f8ff;
+  font-size: 0.9rem;
+}
+
+.footer-section ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-section ul li i {
+  margin-right: 10px;
+  color: #f0f8ff;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.newsletter-form button {
+  background-color: #f0f8ff;
+  color: #0077b6;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #ffffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #005f8a; 
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #f0f8ff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #f0f8ff;
+}
+img{
+    height: 100%;
+}
+
+    </style>
+
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="height: 100px; background: linear-gradient(to right,rgb(24, 177, 197),rgb(143, 185, 202),rgb(255, 255, 255));">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="images/pngwing.com.png" alt="img is not supported" style="height: 35px;"><b> COSY AIR CONDITIONERS </b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html" style="padding-left: 120px;"><b>Home</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html"><b> About Us</b></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <b> Special Offers </b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="discount.html"><b> Seasonal Discounts</b></a></li>
+              <li><a class="dropdown-item" href="specialoffer.html"><b> Special Offers</b></a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="newarrivals.html"><b> New Arrivals</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html"><b> Products</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="form.html"><b> Contact Us</b></a>
+          </li>
+        </ul>
+       
+        <form class="d-flex" role="search" style="height: 45px;">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-info" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav> 
+ 
+    <!-- Card Container -->
+     <img src="images/downloadd.png" alt="..." style="height: 100px ; width: 1200px; padding-left: 400px ;">
+
+    <div class="card-container">
+        <div class="card">
+            <img src="data:image/jpeg;base64,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" alt="Product Image">
+            <h3>Dawlance 1 Ton ac</h3>
+            <p>Dawlance Split AC Chrome Pro Inv 30 Copper Wind Blast</p>
+            <div class="price">
+                <span class="original-price">₨ 94,999</span>
+                <span class="discounted-price">₨ 77,500</span>                
+            </div>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="data:image/jpeg;base64,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" alt="Product Image">
+            <h3>Dawlance 1.5 Ton ac</h3>
+            <p >Dawlance Inverter Ac 1.5 Ton Air Conditioner  Enercon-30</p>
+            <div class="price">
+                <span class="original-price">₨ 108,999</span>
+                <span class="discounted-price" >₨ 92,700</span> 
+             
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNurwsxG9a3lfBTwshTcteaupiswZfXrYAWg&s" alt="Product Image">
+            <h3>Dawlance 2 Ton ac</h3>
+            <p>Dawlance Avante Inverter 30 1.5 Ton Split Air Conditioner (Designer Champagne) WB</p>
+            <div class="price">
+                <span class="original-price">₨  77,500</span>
+                <span class="discounted-price">₨ 67,599</span> 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <img src="images/pngegg (1).png" alt="Product Image">
+            <h3>Dawlance 1.5 Ton ac</h3>
+            <p>Dawlance Split AC Chrome Pro Inv 30 Copper Wind Blast</p>
+            <div class="price">
+                <span class="original-price">₨ 94,999</span>
+                <span class="discounted-price">₨ 77,500</span> 
+               
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQDw8PEA4QDxENDQ4ODQ8PExIQEBANFREWFxURExMYHSggGBolJxMTIjEiJSkrOi8zFx8zODk4QygvLjcBCgoKDg0OFQ0PFSslFSU4Ny4rNywtKy0wNysxKzEzLTc4NzIrNzgrNzg3MCs3NCs4ODg3KzcrMisuMjM0Kys3K//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAgUBAwcEBv/EAEIQAQABAgMDCAMOAwkAAAAAAAABAgMEERQSIZEFEzFBUVJhcQYioQcVJDJEVIGSk7HB0dThI1NVFhczNGJyg9Li/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAGBEBAQEBAQAAAAAAAAAAAAAAABEBEgL/2gAMAwEAAhEDEQA/AO4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1TejOYymcpynzaNbVnMae7u6JibOU+MevnxSjr85+9kEaMZMzEcxdjPrmbWUcK3p247WgFbLt3KmZiJrmI3UxlEz4RnlHF46+Uq46MFiKvKrDfjdh6AHl99LmzVOhxOdMRNNG1hNquc4jKn+Nlnvmd8x0T5NHv5e/pWO+vyf+pWII8lrlS7VbrrnAYiiaJnZs114Xnbm6N9Gzdmjfnl61VPRLy+/wBiP6PjvtOTv1K2AVvv3f2dr3rxee3s83zmB5zLLPb/AMfZ2er42ec9GW9Gnl2/18kY6P8Ak5O/UrOWAarXKFc00zOFv0TVTnNNU4eaqZzn1Z2bkxnuz3TMb4Sqx9WU/Br05R0RNjOfDfcTARqxsxn/AALs5dcTaynx+ORjp3fwLsZ9czayjz9dKUAT1NXcj637Mamv+XH1/wBkRRLVV/y4+v8A+W2MRG7dMZ5eO95zP2bwe4BAAAAAAAABorjfKKV2d8oZissZmbG0AE1MTUDMVMxVCEy11eYPRMsTXHa8kzMK7lPAVX6rdUX71nmorjK1VsRXtVUT68dM5c3luyn1qspjpEXNV6GucTHZKq5L5Mm1VM14vEXomJiKbs0zTEzMTNUZR07vbPbMza027fZE+e/2AjrI7M/p3pRfqnot1fTu+9tiYjojI2gR2qu7EedX5Qxv7I4/sntIgb/AifCUqaoab8VzNOxVERFWdecZ509kLjPrZllbGKuhmZYqndPkNPeMRLKAAAAAAAACvv3vWnza+eVnKWL2b1yOyr8Hm16ovOeOeUevNeC75051Sa814LrnPFnnIUmvNeC751ibseCl17GuBczMeSMz4qjXGuBbbcx18JZ5+VRrmNcC51BqFNrvE1wLrnznlLrmNcC75zxOc8VJrk7OMzqpjtqiPaD66jojyhJinojyhlFAAAAAAAAfHcr4+zRfuUXLMVVU1b5mnOZiYzjf5TD5jHeitWPvVYizisVh7WUUc1Yu12qdqIiZnZid3xvY6hdwNquZqqt01TPTMxvYpwNEbqc6I7KZyhajl9v3Pb1Py3G1f7sRdn8Wyr0CvT8rxceV+7H4um6SO9XxNJHer4rSOaR6C3vneK+2u/mjPoFen5Xi+jLdfux+LpukjvV8TSR3q+JSOX1+57dnm8sfjfVs7NUai7vr5yuZqr375yqiPKmGyj0DvRGWrxU+d+7M9OfedM0kd6viaSO9XxSkcyr9Ar05fDMXGXZfux1xO/f4JT6CXvnWK+3u/wDZ0vSR3q+JpI71XFaRyzE+gF3Zqq12Op6as6MRdzjrmIjP2NlXuf3ZrrqjG43Kq9XXRGou5U0bUzTTEROWUOn6SO9XxNJHer4pSOZVegV6Yy1mLjxi/dz+9mPQO9llq8X9vdz47TpmkjvV8TSR3q+K0jmP9gb2/wCF4vflH+YvdufeR/u+vZ563G74yy1F3Lhm6hpI71fE0kd6vidEcwn3P73z3Gfb3PzRq9z29Py7Gx5Yi5+bqcYan/Vxk01Pjxk6I5NT6G3sJcoxFWOxd23RVTF21eu1XKKqKq4py39E+tE/Rl1vpsNyjh5roiixEVVV000TFPRVM5R977GvB0VRlVG1HXEzMxwYt8n2aZiqLVETE5xOXRKUemAEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z" alt="Product Image">
+            <h3>Dawlance 1 Ton ac</h3>
+            <p style="padding-bottom: 26px;">Dawlance Inverter Ac 1.5 Ton Enercon-30</p>
+            <div class="price">
+                <span class="original-price">₨ 108,999</span>
+                <span class="discounted-price">₨ 92,700</span> 
+             
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="data:image/jpeg;base64,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" alt="Product Image">
+            <h3>Dawlance 1.5 Ton ac</h3>
+            <p>Dawlance Avante Inverter 30 1.5 Ton Split Air Conditioner (Designer Champagne) WB</p>
+            <div class="price">
+                <span class="original-price">₨  77,500</span>
+                <span class="discounted-price">₨ 67,599</span> 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <img src="images/download.jpeg" alt="..." style="height: 100px ; width: 1200px; padding-left: 400px; ">
+    
+    <div class="card-container">
+        <div class="card">
+            <img src="https://qasimelectronics.pk/wp-content/uploads/2023/11/Daikin-1-Ton-Non-Inverter-Split-AC-FT15JXV1P-300x300.jpg" alt="Product Image" >
+            <h3>Daikin 2 Ton ac</h3>
+            <p>Daikin Non-Inverter AC FT20JXV1P Price in Lahore Pakistan 2025</p>
+            <div class="price">
+                <span class="original-price">₨ 91,999</span>
+                <span class="discounted-price">₨ 73,500</span> 
+               
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNar4z8as1N0HaI92jhSVBSh-VTudZi4Ip4w&s" alt="Product Image">
+            <h3>Daikin 1 Ton ac</h3>
+            <p>Daikin Split Air Conditioner 2.0 Ton FTN-25AV1K</p>
+            <div class="price">
+                <span class="original-price">₨ 82,599</span>
+                <span class="discounted-price">₨ 78,900</span> 
+             
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ88I597PxNERA-o-YoDNA28k2C5ySkKmaqOVaFNNFqwieCY1Dy3AxefAHcuD23Y181LYQ&usqp=CAU" alt="Product Image" style="padding-bottom: 24px; margin-top: 60px;">
+            <h3>Daikin 1.5 Ton ac</h3>
+            <p >Daikin 1.0 Ton Split Inverter Air Conditioner FTX35AXV1 Price in</p>
+            <div class="price">
+                <span class="original-price">₨  86,500</span>
+                <span class="discounted-price">₨ 79,999</span> 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://www.mega.pk/items_images/DAIKIN++FTN35AXV1+Price+in+Pakistan%2C+Specifications%2C+Features_-_16092.webp" alt="Product Image"style="padding-bottom: 80px;">
+            <h3>Daikin 1.5 Ton ac</h3>
+            <p >DAIKIN FTN35AXV1 Price in Pakistan - Mega.Pk</p>
+            <div class="price">
+                <span class="original-price">₨ 95,699</span>
+                <span class="discounted-price">₨ 89,200</span> 
+               
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://image3.mouthshut.com/images/Restaurant/Photo/-20141_50380.jpg" alt="Product Image"style="padding-bottom: 35px; margin-top:79px;">
+            <h3>Daikin 1 Ton ac</h3>
+            <p style="padding-bottom: 20px">Daikin Inverter Ac 1.5 Ton Enercon-30</p>
+            <div class="price">
+                <span class="original-price">₨ 99,999</span>
+                <span class="discounted-price">₨ 92,999</span> 
+             
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQm2KfvrB1N1r00uGCjqvBUhQgg5vWxiXh0Ek0bsAWR-uOUoOKn4WU-wxu2y3EjSWmLBY&usqp=CAU" alt="Product Image">
+            <h3>Daikin 2.5 Ton ac</h3>
+            <p>Daikin Avante Inverter 30 1.5 Ton Split Air Conditioner (Designer Champagne) WB</p>
+            <div class="price">
+                <span class="original-price">₨  72,999</span>
+                <span class="discounted-price">₨ 71,999</span> 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <img src="images/gree logo.jpeg" alt="..." style="height: 100px ; width: 1200px; padding-left: 400px ;">
+    <div class="card-container">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy-__nTbm9YwujK4easIZCuYFxpZxzJJK9YA&s" alt="Product Image"style="padding-bottom: 21px; padding-top: 4px;">
+            <h3>Gree 2 Ton ac</h3>
+            <p>Gree Split AC Chrome Pro Inv 30 Copper Wind Blast</p>
+            <div class="price">
+                <span class="original-price">₨ 94,500</span>
+                <span class="discounted-price">₨ 89,200</span> 
+               
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://electrociti.pk/wp-content/uploads/2022/03/Gree-1.5-Ton-Fairy-Inverter-AC-18FITH6S.jpg" alt="Product Image">
+            <h3>Gree 1.5 Ton </h3>
+            <p>Gree Inverter Ac 1.5 Ton Enercon-30</p>
+            <div class="price">
+                <span class="original-price">₨ 80,999</span>
+                <span class="discounted-price">₨ 74,500</span> 
+             
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_ITn3K5bV9JR2C9OlgDHu7ct6E5ADczngutOtdw1sUSIekRoZ7evUFvkCCYqwPQLN0E0&usqp=CAU" alt="Product Image"style="padding-bottom: 47px;">
+            <h3>Gree 1 Ton ac</h3>
+            <p>Gree Pro Inv 30 Copper Wind Blast</p>
+            <div class="price">
+                <span class="original-price">₨  66,900</span>
+                <span class="discounted-price">₨ 61,999</span> 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+    
+    <div class="card-container">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG30kg2ztm88THsbFgeQyYDoNUBirjqlKL3Wa9vopZzRYlr5-hAxr6AvVbfD0lU_zQX_Y&usqp=CAU" alt="Product Image">
+            <h3>Gree 2.5 on ac</h3>
+            <p>Gree Split AC Chrome Pro Inv 30 Copper Wind Blast</p>
+            <div class="price">
+                <span class="original-price">₨ 91,299</span>
+                <span class="discounted-price">₨ 87,200</span> 
+               
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://selectronics.com.pk/wp-content/uploads/2023/01/GS-12PITH2-Gree-Pular-Series-AC-price-in-Pakistan.jpg" alt="Product Image">
+            <h3>Gree 2 Aon ac</h3>
+            <p>Gree 2 Ton Inverter Air Conditioner 24PITH14S Turbo</p>
+            <div class="price">
+                <span class="original-price">₨ 108,999</span>
+                <span class="discounted-price">₨ 92,700</span> 
+             
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://www.mega.pk/items_images/GREE+GS-24FITH4WB+2+TON+HEAT+%26+COOL+INVERTER+Air+Conditioner+Price+in+Pakistan%2C+Specifications%2C+Features_-_19849.webp" alt="Product Image" style="padding-bottom: 38px; margin-top: 45px; ">
+            <h3>Gree 2 Ton ac</h3>
+            <p>GREE GS-24FITH4WB 2 TON HEAT & COOL INVERTER Air Conditioner</p>
+            <div class="price">
+                <span class="original-price">₨  77,500</span>
+                <span class="discounted-price">₨ 67,599</span> 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <img src="images/download (2).png" alt="..." style="height: 100px ; width: 1200px; padding-left: 400px ;">
+    <div class="card-container">
+        <div class="card">
+            <img src="https://www.shoppingjin.pk/wp-content/uploads/2024/08/kenwood-kes-2462s-esupreme-pro-2-ton-dc-inverter-ac-front-shoppingjin.pk-300x300.jpg" alt="Product Image">
+            <h3>Mitsubishi 1.5 Ton ac</h3>
+            <p>Buy Mitsubishi 1.5 Ton Inverter AC at Best Price in Pakistan</p>
+            <div class="price">
+                <span class="original-price">₨ 94,999</span>
+                <span class="discounted-price">₨ 77,500</span> 
+               
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw41rUTf6iXDqvuQVvn0WDCMLTQeNJH61BYw&s" alt="Product Image">
+            <h3>Mitsubishi 0.5 Ton ac</h3>
+            <p>SRK-18CLK Mitsubishi Split AC Wall Type Cool Only 1.5Ton </p>
+            <div class="price">
+                <span class="original-price">₨ 49,999</span>
+                <span class="discounted-price">₨ 42,700</span> 
+             
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://images.priceoye.pk/mitsubishi-1-0-ton-inverter-series-split-ac-hj35va-pakistan-priceoye-j85fq.jpg" alt="Product Image" >
+            <h3  >Mitsubishi 2.5 Ton ac</h3>
+            <p  style="padding-bottom: 24px;">Mitsubishi AC Price in Pakistan | PriceOye</p>
+            <div class="price">
+                <span class="original-price">₨  99,999</span>
+                <span class="discounted-price">₨ 91,999</span> 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    
+    <div class="card-container">
+        <div class="card">
+            <img src="https://www.radiotvcentre.pk/wp-content/uploads/2022/04/SRK-18CLK-Mitsubishi-Inverter-Split-AC-Price-in-Pakistan.jpg" alt="Product Image">
+            <h3>Mitsubishi 1.1 Ton ac</h3>
+            <p  style="padding-bottom: 22px;">Mitsubishi heavy 1.1 ton 2 star srk13crs </p>
+            <div class="price">
+                <span class="original-price">₨ 69,999</span>
+                <span class="discounted-price">₨ 61,500</span> 
+               
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0GprXWwWv2W21pg8Vojkwxu6gRdb0qzPl52yKRvFDza57HGTF7HQdLcGiC6JjBJVr95g&usqp=CAU" alt="Product Image">
+            <h3>Mitsubishi 1.5 Ton ac</h3>
+            <p>Mitsubishi Split Air Conditioner MS-18 VC 1.5 Ton</p>
+            <div class="price">
+                <span class="original-price">₨ 89,599</span>
+                <span class="discounted-price">₨ 82,300</span> 
+             
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkrMFQiLzxHrVNG_W0KdISn1-qLM1ZqV5RA&s" alt="Product Image">
+            <h3>Mitsubishi 2 Ton ac</h3>
+            <p>Mitsubishi Air Conditioner at best price in Hyderabad by Visionair </p>
+            <div class="price">
+                <span class="original-price">₨  89,200</span>
+                <span class="discounted-price">₨ 83,300</span> 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+
+
+    
+        <img src="images/pngegg.png" alt="..." style="height: 100px ; width: 1200px; padding-left: 400px ;">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Vjq58hODC6AtVNkKEsmCxr_534apBbArMA&s" alt="Product Image">
+                <h3>Blue Star 1.5 Ton ac</h3>
+                <p>Blue Star Wall mounted split ac Price in Pakistan </p>
+                <div class="price">
+                    <span class="original-price">₨ 65,899</span>
+                    <span class="discounted-price">₨ 62,999</span> 
+                   
+                </div>
+                <button>Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS3wnvnXAcszX2VYSQSOBMfcIpxTwjMAXAZg&s" alt="Product Image">
+                <h3>Blue Star 0.5 Ton ac</h3>
+                <p>Blue Star AC 0.5 Ton | Blue Star AC Price – Viva Store</p>
+                <div class="price">
+                    <span class="original-price">₨ 28,900</span>
+                    <span class="discounted-price">₨ 25,700</span> 
+                 
+                </div>
+                <button>Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN-B4VkOeNS95YcIlqUSAnCJlpL2YqmEopSWh4cdfZ4jZouoMIVf6lVSdsvZcHDForvQE&usqp=CAU" alt="Product Image">
+                <h3>Blue Star 2 Ton ac</h3>
+                <p>Blue Star Split Air Conditioner (Designer Champagne) WB</p>
+                <div class="price">
+                    <span class="original-price">₨  67,000</span>
+                    <span class="discounted-price">₨ 65,999</span> 
+                    
+                </div>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    
+    
+    <div class="card-container">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXMUgJXWsLOHv_O-hHHfjDHgvNnO9B1yG0O6HTy2cUwOwwvFh1EhxT_uyObbmcwA9Qe3s&usqp=CAU" alt="Product Image">
+            <h3>Blue Star 2.5 Ton ac</h3>
+            <p>Blue Star AC Chrome Pro Inv 30 Copper Wind Blast</p>
+            <div class="price">
+                <span class="original-price">₨ 84,900</span>
+                <span class="discounted-price">₨ 71,500</span> 
+               
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOu2Axtu-wlyiTi41cMIbBmwsD5Tjq7jNQB2WlC2nKPRSNPYb1GHdsiQjNSMStEH--u3A&usqp=CAU" alt="Product Image"  style="padding-bottom: 24px;">
+            <h3>Blue Star 1 Ton ac</h3>
+            <p>Blue star Inverter Ac 1 Ton Enercon-30</p>
+            <div class="price">
+                <span class="original-price">₨ 38,500</span>
+                <span class="discounted-price">₨ 32,000</span> 
+             
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZJEbn8QM7Jw-Vt_X9W4GUnNwPVyGE3TDltcAP5wi4j8JOQjziLIVuappt8fNF6OkueY&usqp=CAU" alt="Product Image"  style="padding-bottom: 25px;">
+            <h3>Blue Star 0.5 Ton ac</h3>
+            <p>Blue Star 0.5 Ton 2 Star Fixed Speed Split AC</p>
+            <div class="price">
+                <span class="original-price">₨  43,500</span>
+                <span class="discounted-price">₨ 30,999</span> 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <img src="images/download (1).png" alt="..." style="height: 100px ; width: 1200px; padding-left: 400px ;">
+    <div class="card-container">
+        <div class="card">
+            <img src="https://www.aysonline.pk/wp-content/uploads/2022/05/Samsung-1.5-Ton-DC-Inverter-AC-AR18ASFZGWKYPM-T3.jpg" alt="Product Image">
+            <h3>Panasonic 1 Split AC</h3>
+            <p>Panasonic Split AC Chrome Pro Inv 30 Copper Wind Blast</p>
+            <div class="price">
+                <span class="original-price">₨ 94,999</span>
+                <span class="discounted-price">₨ 87,500</span> 
+                 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://yasirelectronics.com/wp-content/uploads/2023/06/Samsung-Wind-Free-Split-Air-Conditioner-AR18TSFCE.jpg" alt="Product Image" style="padding-bottom: 27px;">
+            <h3>Panasonic 1.5 Split AC</h3>
+            <p>Panasonic UE-18XKF9 1.5 Ton Inverter AC</p>
+            <div class="price">
+                <span class="original-price">₨  77,500</span>
+                <span class="discounted-price">₨ 67,599</span>   
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://qasimelectronics.pk/wp-content/uploads/2023/11/Panasonic-Split-A-c-CS-UE12WKF-9-Inverter-T3-Compressor-300x300.jpg" alt="Product Image">
+            <h3>Panasonic 2.1 Split AC</h3>
+            <p>Panasonic Split Ac CS-UE24WKF-9 Price in Lahore Pakistan 2025</p>
+            <div class="price">
+                <span class="original-price">₨ 101,000</span>
+                <span class="discounted-price">₨ 97,799</span>
+              
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    
+    <div class="card-container">
+        <div class="card">
+            <img src="data:image/jpeg;base64,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" alt="Product Image">
+            <h3>Panasonic 1.0 Split AC</h3>
+            <p>Panasonic UE-18XKF9 1.0 Ton Inverter AC</p>
+            <div class="price">
+                <span class="original-price">₨ 80,000</span>
+                <span class="discounted-price">₨ 77,999</span> 
+               
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDb0mdvANVT0VZjzTGCRG5oYRZbR1ynaot2wy0EBpggzsZXsRSbfPF8oJThGRP1-duByM&usqp=CAU" alt="Product Image">
+            <h3>Panasonic 1.5 Split AC</h3>
+            <p>Panasonic 1.5 Ton Wall Mounted Air Conditioner CS-UE24WKF-9</p>
+            <div class="price">
+                <span class="original-price">₨ 89,999</span>
+                <span class="discounted-price">₨ 83,799</span> 
+             
+            </div>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrNM0j9xgfD1506H3AEOxz94ZYC1Pldgw0yg&s" alt="Product Image">
+            <h3>Panasonic 1 Split AC</h3>
+            <p>Panasonic 1 Ton EcoNavi Series Inverter AC (CSPC24TKF)</p>
+            <div class="price">
+                <span class="original-price">₨ 70,000</span>
+                <span class="discounted-price">₨ 67,999</span> 
+                
+            </div>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>COSY AIR CONDITIONERS</h3>
+                <p>We provide energy-efficient and eco-friendly air conditioning solutions to keep your home comfortable all year round.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="form.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Cozy Street, Comfort City</li>
+                    <li><i class="fas fa-phone"></i> +92 (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> info@cozyairconditioners.com</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Stay updated with our latest products and offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/business/help/1093295047789621" class=".buy-now-button" ><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/?lang=en" class=".buy-now-button" ><i class="fab fa-twitter"></i></a>
+                <a href="https://help.instagram.com/1093295047789621/?helpref=related_articles" class=".buy-now-button" ><i class="fab fa-instagram"></i></a>
+                <a href="https://pk.linkedin.com/" class=".buy-now-button" ><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2025 Cozy AIR CONDITIONERS. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

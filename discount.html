@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styling */
+     * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: 'Arial', sans-serif;
+     }
+     
+     body {
+         background-color: #f4f4f4;
+         color: #333;
+     }
+     
+     header {
+         background-color: #005f8a;
+         color: white;
+         text-align: center;
+         padding: 50px 20px;
+     }
+     
+     header h1 {
+         font-size: 2.5em;
+         margin-bottom: 10px;
+     }
+     
+     header p {
+         font-size: 1.2em;
+         font-weight: 300;
+     }
+     
+     /* Intro Section */
+     .intro {
+         background-color: white;
+         padding: 30px 20px;
+         margin: 20px auto;
+         width: 80%;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     }
+     
+     .intro h2 {
+         font-size: 2em;
+         margin-bottom: 15px;
+     }
+     
+     .intro p {
+         font-size: 1.1em;
+         line-height: 1.6;
+     }
+     
+     .intro ul {
+         list-style: none;
+         margin: 20px 0;
+         padding-left: 20px;
+     }
+     
+     .intro li {
+         margin-bottom: 10px;
+         font-size: 1.1em;
+     }
+     
+     /* Offer Section */
+     .offer-details {
+         background-color: #ffffff;
+         padding: 40px 20px;
+         margin: 20px auto;
+         width: 80%;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     }
+     
+     .offer-details h2 {
+         font-size: 2.5em;
+         margin-bottom: 20px;
+         color: #005f8a;
+     }
+     
+     .offer-details .offer {
+         margin-bottom: 30px;
+     }
+     
+     .offer-details .offer h3 {
+         font-size: 1.8em;
+         margin-bottom: 15px;
+     }
+     
+     .offer-details .offer ul {
+         list-style: none;
+         padding-left: 0;
+     }
+     
+     .offer-details .offer li {
+         font-size: 1.2em;
+         margin-bottom: 15px;
+         line-height: 1.6;
+     }
+     
+     .cta {
+         text-align: center;
+         margin-top: 30px;
+     }
+     
+     .cta h3 {
+         font-size: 2em;
+         margin-bottom: 10px;
+     }
+     
+     .cta p {
+         font-size: 1.2em;
+         margin-bottom: 20px;
+     }
+     
+     .cta form {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+     
+     .cta label {
+         font-size: 1.1em;
+         margin-bottom: 5px;
+     }
+     
+     .cta input {
+         font-size: 1em;
+         padding: 10px;
+         margin: 10px 0;
+         width: 60%;
+         border-radius: 5px;
+         border: 1px solid #ddd;
+     }
+     
+     .cta button {
+         background-color: #005f8a;
+         color: white;
+         padding: 15px 30px;
+         border: none;
+         border-radius: 5px;
+         font-size: 1.2em;
+         cursor: pointer;
+         transition: background-color 0.3s ease;
+     }
+     
+     .cta button:hover {
+         background-color: #055174;
+     }
+     
+     /* Testimonial Section */
+     .testimonial {
+         background-color: #f9f9f9;
+         padding: 40px 20px;
+         margin: 20px auto;
+         width: 80%;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     }
+     
+     .testimonial h2 {
+         font-size: 2.5em;
+         text-align: center;
+         margin-bottom: 30px;
+         color: #005f8a;
+     }
+     
+     .testimonial-container {
+         display: flex;
+         justify-content: space-around;
+         flex-wrap: wrap;
+     }
+     
+     .testimonial-item {
+         background-color: #ffffff;
+         padding: 20px;
+         width: 45%;
+         margin: 10px 0;
+         border-radius: 8px;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+         text-align: center;
+     }
+     
+     .testimonial-item p {
+         font-size: 1.1em;
+         line-height: 1.6;
+         color: #555;
+     }
+     
+     .testimonial-item h4 {
+         font-size: 1.2em;
+         margin-top: 15px;
+         color: #333;
+         font-weight: bold;
+     }
+     footer {
+ font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ background-color: #f0f8ff; 
+ color: #333;
+}
+
+footer {
+ background-color: #0077b6; 
+ color: #ffffff;
+ padding: 40px 0 20px 0;
+ margin-top: 50px;
+ width: 1580px;
+}
+
+.footer-container {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+ gap: 20px;
+}
+
+.footer-section {
+ flex: 1;
+ min-width: 200px;
+ margin-bottom: 20px;
+}
+
+.footer-section h3 {
+ font-size: 1.2rem;
+ margin-bottom: 15px;
+ color: #ffffff;
+}
+
+.footer-section p {
+ font-size: 0.9rem;
+ line-height: 1.6;
+ color: #f0f8ff;
+}
+
+.footer-section ul {
+ list-style: none;
+ padding: 0;
+}
+
+.footer-section ul li {
+ margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+ text-decoration: none;
+ color: #f0f8ff;
+ font-size: 0.9rem;
+}
+
+.footer-section ul li a:hover {
+ color: #ffffff;
+ text-decoration: underline;
+}
+
+.footer-section ul li i {
+ margin-right: 10px;
+ color: #f0f8ff;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+}
+
+.newsletter-form input {
+ flex: 1;
+ padding: 10px;
+ border: none;
+ border-radius: 5px;
+ font-size: 0.9rem;
+}
+
+.newsletter-form button {
+ background-color: #f0f8ff;
+ color: #0077b6;
+ border: none;
+ padding: 10px 15px;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+ background-color: #ffffff;
+}
+
+.footer-bottom {
+ text-align: center;
+ padding: 20px 0;
+ background-color: #005f8a; 
+ margin-top: 20px;
+}
+
+.social-icons {
+ display: flex;
+ justify-content: center;
+ gap: 15px;
+ margin-bottom: 10px;
+}
+
+.social-icons a {
+ color: #f0f8ff;
+ font-size: 1.2rem;
+ transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+ color: #ffffff;
+}
+
+.footer-bottom p {
+ margin: 0;
+ font-size: 0.9rem;
+ color: #f0f8ff;
+}
+
+     </style>
+
+</head>
+<body>
+
+
+                            <!---------     navbar  ------------->
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="height: 100px; background: linear-gradient(to right,rgb(24, 177, 197),rgb(143, 185, 202),rgb(255, 255, 255));">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="images/pngwing.com.png" alt="img is not supported" style="height: 35px;"><b> COSY AIR CONDITIONERS </b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html" style="padding-left: 120px;"><b>Home</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html"><b> About Us</b></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <b> Special Offers </b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="discount.html"><b> Special Discounts</b></a></li>
+                  <li><a class="dropdown-item" href="specialoffer.html"><b> Special Offers</b></a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="newarrivals.html"><b> New Arrivals</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="products.html"><b> Products</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="form.html"><b> Contact Us</b></a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search" style="height: 45px;">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-info" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav> 
+
+              <!----------      page ------------>
+          <header>
+              <h1>Exclusive Special Air Conditioning Discount Offer!</h1>
+              <p>Beat the heat and enjoy the comfort with our limited-time special offers on air conditioning solutions.</p>
+          </header>
+      
+          <section class="intro">
+              <h2>Why Choose Us?</h2>
+              <p>We are the leading experts in air conditioning installations and repairs. Our team ensures top-notch quality, fast service, and long-term satisfaction. Here’s why our clients trust us:</p>
+              <ul>
+                  <li>Over 15 years of experience in the industry.</li>
+                  <li>Expertly trained technicians.</li>
+                  <li>Competitive pricing with no hidden costs.</li>
+                  <li>We use only high-quality, energy-efficient units.</li>
+                  <li>Customer satisfaction is our top priority.</li>
+                  <li>Free home delivery.</li>
+                  <li>One year free services</li>
+              </ul>
+          </section>
+      
+          <section class="offer-details">
+              <h2><center>Exclusive Offer - Limited Time Only!</center></h2>
+              <div class="offer">
+                  <h3>What You Get:</h3>
+                  <ul>
+                      <li><strong>Up to 25% off</strong> on all air conditioning installations.</li>
+                      <li><strong>Free installation</strong> on select high-efficiency units.</li>
+                      <li><strong>Discounted</strong> service and maintenance packages for 1 year.</li>
+                      <li><strong>Free consultation</strong> and energy-efficiency audit.</li>
+                      <li><strong>Extended warranty</strong> of up to 5 years on new systems.</li>
+                      <li><strong>Priority support</strong> and emergency services.</li>
+                  </ul>
+              </div>
+      
+              <div class="cta">
+                  <h3>Ready to Enjoy the Comfort?</h3>
+                  <p>Take advantage of this unbeatable offer! Fill out the form below to book a FREE consultation or get more details on the offers:</p>
+                  <form>
+                      <label for="name">Promo code:</label>
+                      <input type="text" id="name" name="name" placeholder="Enter your Promo code" required>
+                      <button type="submit" class="buy-now-button" aria-required="true">Request a Special Discount</button>
+                  </form>
+              </div>
+          </section>
+      
+          <section class="testimonial">
+              <h2>What Our Customers Are Saying</h2>
+              <div class="testimonial-container">
+                  <div class="testimonial-item">
+                      <p>"The installation was quick, and the technicians were friendly and professional. Our new air conditioning unit is working perfectly!"</p>
+                      <h4>-Mr AHSAN W.</h4>
+                  </div>
+                  <div class="testimonial-item">
+                      <p>"Great service and affordable pricing. We are very happy with our new system. Highly recommend!"</p>
+                      <h4>-Mr SAAD B.</h4>
+                  </div>
+                  <div class="testimonial-item">
+                      <p>"It was Great expirices nd good quality!"</p>
+                      <h4>-Mr Zeeshan S.</h4>
+                  </div>
+              </div>
+          </section>
+      
+
+    <!--------     footer    -------->
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>COSY AIR CONDITIONERS</h3>
+                <p>We provide energy-efficient and eco-friendly air conditioning solutions to keep your home comfortable all year round.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="form.html">Contact</a></li>
+                </ul>
+              </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <a href="https://www.google.com/maps/place/Aptech+Computer+Education+North+Nazimabad+Center/@24.926879,67.034748,16z/data=!4m6!3m5!1s0x3eb33f90157042d3:0x93d609e8bec9a880!8m2!3d24.9268785!4d67.0347483!16s%2Fg%2F11xyvbmyb?hl=en&entry=ttu&g_ep=EgoyMDI1MDIxOC4wIKXMDSoASAFQAw%3D%3D"  style="color: #ffffff;"><li><i class="fas fa-map-marker-alt" ></i>Aptech Computer Education North Nazimabad Center</li></a>
+                    <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> info@cozyairconditioners.com</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Stay updated with our latest products and offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="bbtn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/business/help/1093295047789621" class=".buy-now-button" ><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/?lang=en" class=".buy-now-button" ><i class="fab fa-twitter"></i></a>
+                <a href="https://help.instagram.com/1093295047789621/?helpref=related_articles" class=".buy-now-button" ><i class="fab fa-instagram"></i></a>
+                <a href="https://pk.linkedin.com/" class=".buy-now-button" ><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2025 Cozy AIR CONDITIONERS. All rights reserved.</p>
+        </div>
+    </footer>
+    <script> 
+    const buttons = document.querySelectorAll(".buy-now-button");
+
+        buttons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                alert("Your promo code is applied");
+            });
+        });
+</script>
+</body>
+</html>
